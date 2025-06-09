@@ -243,14 +243,14 @@ class CalculatorState extends ChangeNotifier {
   String _format(String number) {
     double value = double.parse(number);
   // Round to 2 decimal places
-  double rounded = double.parse(value.toStringAsFixed(8));
+  double rounded = double.parse(value.toStringAsFixed(7));
   
   // If it's a whole number, return as integer
   if (rounded == rounded.toInt()) {
     return rounded.toInt().toString();
   }
 
-  return rounded.toStringAsFixed(8).replaceAll(RegExp(r'0*$'), '');
+  return rounded.toStringAsFixed(7).replaceAll(RegExp(r'0*$'), '');
   }
 }
 
